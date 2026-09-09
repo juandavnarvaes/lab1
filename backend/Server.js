@@ -38,18 +38,7 @@ app.post("/calcular", (req, res) => {
     const interesMensual = interesAnual / 100 / 12;
 
     let cuota;
-
-    // Caso especial: interés 0%
-    if (interesMensual === 0) {
-        cuota = prestamo / meses;
-    } else {
-        cuota =
-            prestamo *
-            (
-                (interesMensual * Math.pow(1 + interesMensual, meses)) /
-                (Math.pow(1 + interesMensual, meses) - 1)
-            );
-    }
+    
 
     res.json({
         nombre: nombre,
