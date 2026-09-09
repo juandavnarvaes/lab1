@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuota mensual</title>
+    <link rel="stylesheet" href="Style.css">
+
+</head>
+<body>
+    <main>
+        <h1>Calculadora de cuota mensual</h1>
+        <div class="datos">
+            <table >
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" id="nombre" placeholder="Ingrese su nombre"></td>
+                </tr>
+                <tr>
+                    <td>Valor del préstamo</td>
+                    <td><input type="number" min="0" id="valorPrestamo" placeholder="Ingrese el valor del préstamo"></td>
+                </tr>
+                <tr>
+                    <td>Tasa de interés anual (%)</td>
+                    <td><input type="number" min="0" id="tasaInteres" placeholder="Ingrese la tasa de interés anual"></td>
+                </tr>
+                <tr>
+                    <td>Plazo (meses)</td>
+                    <td><input type="number" min="0" id="plazoMeses" placeholder="Ingrese el plazo en meses"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button id="calcular">Calcular cuota mensual</button></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <div class="salida">
+            <textarea id="resultado" readonly>Resultado---</textarea>
+        </div>
+
+        
+    </main>
+</body>
+</html>
