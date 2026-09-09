@@ -16,7 +16,7 @@ app.post("/calcular", (req, res) => {
     } = req.body;
 
     const prestamo = parseFloat(valorPrestamo);
-    const interes = parseFloat(tasaInteres);
+    let interes = parseFloat(tasaInteres);
     const meses = parseInt(plazoMeses);
 
     // Validación
