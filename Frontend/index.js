@@ -36,7 +36,7 @@ async function calcularCuota() {
             "El valor de la cuota mensual para " +
             datos.nombre +
             " es de $" +
-            datos.cuota.toFixed(0) +
+            datos.cuota.toFixed(2) +
             ", el valor del préstamo fue de $" +
             datos.prestamo +
             ", la tasa de interés fue de " +

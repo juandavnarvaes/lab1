@@ -16,17 +16,17 @@ app.post("/calcular", (req, res) => {
     } = req.body;
 
     const prestamo = parseFloat(valorPrestamo);
-    const interesAnual = parseFloat(tasaInteres);
+    const interes = parseFloat(tasaInteres);
     const meses = parseInt(plazoMeses);
 
     // Validación
     if (
         !nombre ||
         isNaN(prestamo) ||
-        isNaN(interesAnual) ||
+        isNaN(interes) ||
         isNaN(meses) ||
         prestamo <= 0 ||
-        interesAnual < 0 ||
+        interes < 0 ||
         meses <= 0
     ) {
         return res.status(400).json({
@@ -34,17 +34,19 @@ app.post("/calcular", (req, res) => {
         });
     }
 
-    // Convertir tasa anual a mensual
-    const interesMensual = interesAnual / 100 / 12;
 
-    let cuota;
-    
+    interes = interes / 100; // Convertir a decimal
+    let cuota = ((1+interes)**meses);
+    cuota = cuota*interes;
+    cuota =cuota/(((1+interes)**meses)-1);
+    cuota = cuota*prestamo;
+
 
     res.json({
         nombre: nombre,
         cuota: cuota,
         prestamo: prestamo,
-        tasaInteres: interesAnual,
+        tasaInteres: interes,
         meses: meses
     });
 });
